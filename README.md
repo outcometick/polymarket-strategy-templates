@@ -9,6 +9,7 @@ order book and the Chainlink stream each market settles on.
 | --- | --- | --- | --- |
 | [`binance-lead`](binance-lead/) | Binance lead · 喂价套利 | Chainlink's settlement TWAP follows Binance spot with a lag. When spot has already moved since the market opened and the book has not priced it, take that side. Reads each coin's own Binance spot feed (declare one per coin; no HYPE). | hosted |
 | [`favourite-near-close`](favourite-near-close/) | Favourite near close · 临近结算吃单 | In the last minute, buy the side the settlement feed says is winning, if the book still sells it below a ceiling. Hold to settlement. | local + hosted |
+| [`spread-quote`](spread-quote/) | Spread quote (market making) · 双边挂单（做市） | Rest a bid for UP at the best bid and a bid for DOWN at one minus the best ask. A filled pair is worth $1 at settlement, so each pair earns the spread. The side you are long of is capped (pairs are hedged), quotes are pulled near the close, and the report's maker panel shows fill rate and markouts. | local + hosted |
 
 ## Quick start
 
@@ -33,6 +34,7 @@ Or clone this repository and point `ot` at a template directory. Each template h
 
 - `binance-lead` 喂价套利：Chainlink 结算 TWAP 跟随币安现货但有滞后。现货自开盘以来已经明显移动、盘口还没跟上时，买入这一边。每个币读自己的币安现货流（每个币都要声明；HYPE 没有）。
 - `favourite-near-close` 临近结算吃单：最后一分钟里，按结算流判断哪一边在领先；盘口卖价还低于上限时买入这一边，持有到结算。
+- `spread-quote` 双边挂单（做市）：在买一挂 UP 的买单、在 1 − 卖一挂 DOWN 的买单。两边各成交一份就凑成一对，到结算值 1 美元，赚的就是价差。持有较多的那一边有上限（凑成对的部分是对冲的），临近收盘撤掉报价；报告的挂单面板给出成交率和成交后的价格走势。
 
 用法见上面的 Quick start；`ot init` 会把模板复制到新目录。模板是起点，不是已被验证的优势。
 
