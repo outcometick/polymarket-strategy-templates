@@ -27,6 +27,11 @@ Or clone this repository and point `ot` at a template directory. Each template h
 - Hosted backtest: https://outcometick.com/backtest
 - From an AI coding tool: the npm package includes an MCP server (`ot mcp`) — https://outcometick.com/docs
 
+## Community
+
+- Discord (English and 中文): https://discord.gg/ZDMqkptwm5
+- Telegram: https://t.me/+TcK_hJOzOz5mZTk1
+
 ## 中文
 
 [outcometick](https://outcometick.com/zh) 回测用的策略模板，适用于 Polymarket 与 Predict.fun 的加密货币涨跌市场（5 分钟、15 分钟），
@@ -37,5 +42,7 @@ Or clone this repository and point `ot` at a template directory. Each template h
 - `spread-quote` 双边挂单（做市）：在买一挂 UP 的买单、在 1 − 卖一挂 DOWN 的买单。两边各成交一份就凑成一对，到结算值 1 美元，赚的就是价差。持有较多的那一边有上限（凑成对的部分是对冲的），临近收盘撤掉报价；报告的挂单面板给出成交率和成交后的价格走势。
 
 用法见上面的 Quick start；`ot init` 会把模板复制到新目录。模板是起点，不是已被验证的优势。
+
+社区：Discord（中英文分区）https://discord.gg/ZDMqkptwm5 · Telegram 群 https://t.me/+TcK_hJOzOz5mZTk1
 
 License: MIT.
